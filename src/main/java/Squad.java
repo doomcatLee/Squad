@@ -37,10 +37,10 @@ public class Squad{
     return mId;
   }
 
-  public int getHeroId(){
-    return mHeros.size();
+  public int getHeroId(Hero hero){
+    return mHeros.indexOf(hero+1);
   }
-  
+
   public static Squad find(int id) {
     return instances1.get(id-1);
   }
