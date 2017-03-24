@@ -58,7 +58,7 @@ public class App {
 
       Squad squad = Squad.find(Integer.parseInt(request.queryParams("squadId")));
       String description = request.queryParams("description");
-      Hero newHero = new Hero(description);
+      Member newHero = new Member(description);
 
       squad.addHero(newHero);
 
@@ -70,7 +70,7 @@ public class App {
     get("squads/:squadId/heros/:heroId", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       Squad squad = Squad.find(Integer.parseInt(request.params(":squadId")));
-      Hero hero = Hero.find(Integer.parseInt(request.params(":heroId")));
+      Member hero = Member.find(Integer.parseInt(request.params(":heroId")));
       model.put("hero",hero);
       model.put("template", "templates/hero.vtl");
       return new ModelAndView(model, layout);

@@ -1,13 +1,13 @@
 import java.util.List;
 import java.util.ArrayList;
 
-public class Hero{
+public class Member{
   private String mName;
-  private static List<Hero> instances = new ArrayList<Hero>();
+  private static List<Member> instances = new ArrayList<Member>();
   private int mId;
 
 
-  public Hero(String a){
+  public Member(String a){
     mName = a;
     instances.add(this);
     mId = instances.size();
@@ -17,7 +17,7 @@ public class Hero{
     return mName;
   }
 
-  public static List<Hero> all(){
+  public static List<Member> all(){
     return instances;
   }
 
@@ -29,7 +29,7 @@ public class Hero{
     return mId;
   }
 
-  public static Hero find(int id) {
+  public static Member find(int id) {
     return instances.get(id - 1);
   }
 

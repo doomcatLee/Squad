@@ -3,24 +3,24 @@ import java.util.ArrayList;
 
 public class Squad{
   private String mName;
-  private Hero mHero;
+  private Member mMember;
   private static List<Squad> instances1 = new ArrayList<Squad>();
   private int mId;
-  private List<Hero> mHeros;
+  private List<Member> mMembers;
 
   public Squad(String a){
     mName = a;
     instances1.add(this);
     mId = instances1.size();
-    mHeros = new ArrayList<Hero>();
+    mMembers = new ArrayList<Member>();
   }
 
   public String getName(){
     return mName;
   }
 
-  public Hero getHero(){
-    return mHero;
+  public Member getHero(){
+    return mMember;
   }
 
   public static List<Squad> all(){
@@ -35,8 +35,8 @@ public class Squad{
     return mId;
   }
 
-  public int getHeroId(Hero hero){
-    int id = mHeros.indexOf(hero) + 1;
+  public int getHeroId(Member member){
+    int id = mMembers.indexOf(member) + 1;
     return id;
   }
 
@@ -44,12 +44,12 @@ public class Squad{
     return instances1.get(id-1);
   }
 
-  public List<Hero> getHeros(){
-    return mHeros;
+  public List<Member> getHeros(){
+    return mMembers;
   }
 
-  public void addHero(Hero hero) {
-    mHeros.add(hero);
+  public void addHero(Member member) {
+    mMembers.add(member);
   }
 
 }
