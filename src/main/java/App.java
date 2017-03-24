@@ -25,7 +25,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       // Hero newHero = new Hero("Dong", "Lee", 100);
       String name = request.queryParams("name");
-      Squad newSquad = new Squad(name, "X");
+      Squad newSquad = new Squad(name);
       model.put("template", "templates/squad-success.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -58,7 +58,7 @@ public class App {
 
       Squad squad = Squad.find(Integer.parseInt(request.queryParams("squadId")));
       String description = request.queryParams("description");
-      Hero newHero = new Hero(description, "lee", 100);
+      Hero newHero = new Hero(description);
 
       squad.addHero(newHero);
 

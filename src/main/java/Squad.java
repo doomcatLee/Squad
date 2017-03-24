@@ -3,15 +3,13 @@ import java.util.ArrayList;
 
 public class Squad{
   private String mName;
-  private String mSymbol;
   private Hero mHero;
   private static List<Squad> instances1 = new ArrayList<Squad>();
   private int mId;
   private List<Hero> mHeros;
 
-  public Squad(String a, String b){
+  public Squad(String a){
     mName = a;
-    mSymbol = b;
     instances1.add(this);
     mId = instances1.size();
     mHeros = new ArrayList<Hero>();
