@@ -38,7 +38,8 @@ public class Squad{
   }
 
   public int getHeroId(Hero hero){
-    return mHeros.indexOf(hero+1);
+    int id = mHeros.indexOf(hero) + 1;
+    return id;
   }
 
   public static Squad find(int id) {
